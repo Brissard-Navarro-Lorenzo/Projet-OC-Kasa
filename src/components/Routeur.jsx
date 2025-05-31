@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router";
 import Home from "../pages/Home";
 import Erreur from "../pages/Erreur";
 import About from "../pages/About";
@@ -9,7 +9,7 @@ import Logement from "../pages/Logement";
 
 export default function Routeur() {
     return (
-        <HashRouter>
+        <BrowserRouter>
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -18,6 +18,6 @@ export default function Routeur() {
                 <Route path="*" element={<Erreur />} />
             </Routes>
             <Footer />
-        </HashRouter>
+        </BrowserRouter>
     );
 }
