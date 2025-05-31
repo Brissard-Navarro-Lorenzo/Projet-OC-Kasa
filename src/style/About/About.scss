@@ -1,0 +1,10 @@
+@use "../Outils/Mixins.scss" as mixins;
+@use "../Outils/Variables.scss" as vars;
+
+.collapse__container {
+    margin: 50px 110px 0 110px;
+    @include mixins.DisplayFlex(column, 30px);
+    @media (max-width: 1000px) {
+        margin: 20px 0 0 0;
+    }
+}

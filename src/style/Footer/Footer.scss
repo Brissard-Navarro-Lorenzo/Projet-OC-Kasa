@@ -1,0 +1,16 @@
+@use "../Outils/Mixins.scss" as mixins;
+@use "../Outils/Variables.scss" as vars;
+
+.footer {
+    @include mixins.ColorTextAlign(vars.$Couleur-blanc, center);
+    @include mixins.BackgroundPadding(vars.$Couleur-noir, 60px 0 30px 0);
+    .footer__text {
+        margin-top: 40px;
+        @include mixins.FontSizeWeight(22px, 100);
+        @media (max-width: 768px) {
+            width: 134px;
+            justify-self: center;
+            @include mixins.FontSizeMarginTop(12px, 20px);
+        }
+    }
+}

@@ -1,0 +1,41 @@
+@use "../Outils/Mixins.scss" as mixins;
+@use "../Outils/Variables.scss" as vars;
+
+.banner {
+    height: 223px;
+    border-radius: 25px;
+    position: relative;
+    box-shadow: 0 4px 4px 0 #00000040;
+    @media (max-width: 768px) {
+        height: 111px;
+        border-radius: 10px;
+    }
+    &__img {
+        @include mixins.WidthHeight(100%, 100%);
+        @include mixins.BorderRadiusetObjectFitCover(25px);
+        filter: brightness(0.4);
+        @media (max-width: 768px) {
+            border-radius: 10px;
+        }
+    }
+    &__title {
+        @include mixins.PositionAbsolute(50%, 50%);
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        color: vars.$Couleur-blanc;
+        font-size: 48px;
+        max-width: 100%;
+        white-space: nowrap;
+        @media (max-width: 1024px) {
+            font-size: 30px;
+        }
+        @media (max-width: 768px) {
+            font-size: 24px;
+        }
+        @media (max-width: 500px) {
+            white-space: normal;
+            width: 225px;
+            left: 130px;
+        }
+    }
+}

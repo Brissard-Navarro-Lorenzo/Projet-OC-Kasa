@@ -1,0 +1,35 @@
+@use "../Outils/Mixins.scss" as mixins;
+@use "../Outils/Variables.scss" as vars;
+
+.header {
+    @include mixins.DisplayFlex(row, 0);
+    @include mixins.AlignJustify(center, space-between);
+    margin: 30px 100px;
+    @media (max-width: 768px) {
+        margin: 20px;
+    }
+    & img {
+        @media (max-width: 768px) {
+            width: 145px;
+        }
+    }
+    .navbar {
+        &__link {
+            margin-left: 30px;
+            @include mixins.ColorTextDecoration(vars.$Couleur-noir, none);
+            font-size: 24px;
+            transition: 0.3s ease;
+            @media (max-width: 768px) {
+                font-size: 12px;
+                text-transform: uppercase;
+                margin-left: 10px;
+            }
+            &--underline {
+                text-decoration: underline;
+            }
+            &:hover {
+                color: vars.$Couleur-principale-rouge;
+            }
+        }
+    }
+}

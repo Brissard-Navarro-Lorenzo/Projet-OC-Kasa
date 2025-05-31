@@ -1,0 +1,11 @@
+@use "../Outils/Mixins.scss" as mixins;
+@use "../Outils/Variables.scss" as vars;
+
+.etoile {
+    &--rouge {
+        color: vars.$Couleur-principale-rouge;
+    }
+    &--grise {
+        color: vars.$Couleur-gris-etoiles;
+    }
+}

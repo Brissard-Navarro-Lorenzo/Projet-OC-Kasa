@@ -1,0 +1,92 @@
+@use "../Outils/Mixins.scss" as mixins;
+@use "../Outils/Variables.scss" as vars;
+
+.logement__contenu {
+    @include mixins.DisplayFlex(row, 0);
+    @include mixins.AlignJustify(stretch, space-between);
+    margin: 40px 0;
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        margin: 10px 0;
+    }
+}
+.infos {
+    @include mixins.DisplayFlex(column, 25px);
+    @media (max-width: 768px) {
+        gap: 0;
+    }
+    &__titre {
+        @include mixins.DisplayFlex(column, 15px);
+        &__h1 {
+            @include mixins.FontSizeWeight(36px, 500);
+            color: vars.$Couleur-principale-rouge;
+            @media (max-width: 768px) {
+                font-size: 18px;
+            }
+        }
+        &__h2 {
+            font-size: 18px;
+            color: vars.$Couleur-noir;
+            @media (max-width: 768px) {
+                font-size: 14px;
+            }
+        }
+    }
+    &__tags {
+        @include mixins.DisplayFlex(row, 0);
+        flex-wrap: wrap;
+    }
+}
+.references {
+    @include mixins.DisplayFlex(column, 0);
+    @include mixins.AlignJustify(end, space-between);
+    @media (max-width: 1024px) {
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+    @media (max-width: 768px) {
+        margin-top: 8px;
+    }
+    &__host {
+        @include mixins.DisplayFlex(row, 0);
+        align-items: center;
+        &__h3 {
+            font-size: 18px;
+            margin-right: 8px;
+            @include mixins.ColorTextAlign(vars.$Couleur-principale-rouge, end);
+            width: 93px;
+            @media (max-width: 768px) {
+                @include mixins.FontSizeWidth(12px, 65px);
+            }
+        }
+        &__img {
+            border-radius: 65px;
+            @include mixins.WidthHeight(64px, 64px);
+            @media (max-width: 768px) {
+                @include mixins.WidthHeight(32px, 32px);
+            }
+        }
+    }
+    &__ratings {
+        @include mixins.DisplayFlex(row, 10px);
+        font-size: 24px;
+        @media (max-width: 768px) {
+            font-size: 13px;
+            gap: 5px;
+        }
+    }
+}
+.detail {
+    @include mixins.DisplayFlex(row, 0);
+    @include mixins.AlignJustify(stretch, space-between);
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        gap: 30px;
+    }
+    &__collapse {
+        @include mixins.FontSizeWidth(13px, 45%);
+        @media (max-width: 1024px) {
+            width: 100%;
+        }
+    }
+}

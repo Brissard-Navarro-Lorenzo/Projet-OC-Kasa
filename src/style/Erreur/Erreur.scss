@@ -1,0 +1,27 @@
+@use "../Outils/Mixins.scss" as mixins;
+@use "../Outils/Variables.scss" as vars;
+
+.erreur {
+    @include mixins.DisplayFlex(column, 80px);
+    @include mixins.ColorTextAlign(vars.$Couleur-principale-rouge, center);
+    margin-bottom: 80px;
+    .erreur__title {
+        font-size: 288px;
+        @media (max-width: 768px) {
+            @include mixins.FontSizeMarginTop(96px, 80px);
+        }
+    }
+    .erreur__message {
+        font-size: 36px;
+        @media (max-width: 768px) {
+            font-size: 18px;
+        }
+    }
+    .erreur__link {
+        font-size: 18px;
+        @include mixins.ColorTextDecoration(vars.$Couleur-noir, underline);
+        @media (max-width: 768px) {
+            font-size: 14px;
+        }
+    }
+}

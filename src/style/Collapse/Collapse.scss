@@ -1,0 +1,45 @@
+@use "../Outils/Mixins.scss" as mixins;
+@use "../Outils/Variables.scss" as vars;
+
+.collapse {
+    &__header {
+        @include mixins.DisplayFlex(row, 0);
+        @include mixins.AlignJustify(center, space-between);
+        @include mixins.BackgroundPadding(vars.$Couleur-principale-rouge, 10px 20px 10px 15px);
+        border-radius: 5px;
+        color: #fff;
+        line-height: 34px;
+        & h2 {
+            @media (max-width: 768px) {
+                font-size: 13px;
+            }
+        }
+    }
+    &__icone {
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+        font-size: 24px;
+        &--ouverte {
+            transform: rotate(-180deg);
+        }
+        &--fermee {
+            transform: rotate(0deg);
+        }
+    }
+
+    &__content {
+        @include mixins.BackgroundPadding(vars.$Couleur-gris-clair, 0 18px);
+        font-size: 16px;
+        overflow: hidden;
+        transition: height 0.3s ease-out, padding 0.3s ease-out;
+        transform-origin: top;
+        height: 0;
+        @media (max-width: 768px) {
+            font-size: 12px;
+        }
+        &--ouvert {
+            padding: 12px 18px;
+            height: auto;
+        }
+    }
+}

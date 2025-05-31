@@ -1,0 +1,26 @@
+@use "../Outils/Mixins.scss" as mixins;
+@use "../Outils/Variables.scss" as vars;
+
+.gallery {
+    @include mixins.DisplayGrid(repeat(3, 1fr), 20px);
+    @include mixins.BackgroundPadding(vars.$Couleur-gris-clair, 55px 50px);
+    border-radius: 25px;
+    margin-top: 50px;
+    text-align: center;
+    @media (max-width: 1380px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 1000px) {
+        grid-template-columns: 1fr;
+    }
+    @media (max-width: 768px) {
+        @include mixins.BackgroundPadding(vars.$Couleur-blanc, 0);
+        margin: 20px 0;
+    }
+    & > a {
+        transition: 0.3s ease-in-out;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
