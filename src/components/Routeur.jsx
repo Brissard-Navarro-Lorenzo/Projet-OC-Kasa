@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router";
 import Home from "../pages/Home";
 import Erreur from "../pages/Erreur";
 import About from "../pages/About";
@@ -15,6 +15,7 @@ export default function Routeur() {
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/logement/:id" element={<Logement />} />
+                <Route path="/Projet-OC-Kasa" element={<Navigate to="/" />} />
                 <Route path="*" element={<Erreur />} />
             </Routes>
             <Footer />
