@@ -3,7 +3,7 @@
     "private": true,
     "version": "0.0.0",
     "type": "module",
-    "homepage": "https://brissard-navarro-norenzo.github.io/Projet-OC-Kasa",
+    "homepage": "https://brissard-navarro-lorenzo.github.io/Projet-OC-Kasa",
     "scripts": {
         "dev": "vite",
         "build": "vite build",

@@ -9,7 +9,7 @@ import Logement from "../pages/Logement";
 
 export default function Routeur() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/Projet-OC-Kasa">
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
